@@ -1,0 +1,22 @@
+package Recursion_Doubt;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "madam";
+
+	}
+
+	public static boolean isPalindrome(String s, int i, int j) {
+		if (i >= j) {
+			return true;
+		}
+		if (s.charAt(i) != s.charAt(j)) {
+			return false;
+		}
+		return isPalindrome(s, i + 1, j - 1);
+
+	}
+
+}
