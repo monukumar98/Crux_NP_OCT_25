@@ -1,6 +1,5 @@
 package Lec28;
 
-import Lec28.Merge_Two_Sorted_Lists.ListNode;
 
 public class Sort_List {
 
