@@ -22,14 +22,14 @@ public class Flatten_Binary_Tree_to_LinkedList {
 
 	class Solution {
 		public void flatten(TreeNode root) {
-
+			MakeLL(root);
 		}
 
 		public TreeNode MakeLL(TreeNode root) {
 			if (root == null) {
 				return null;
 			}
-			if(root.left==null && root.right==null) {
+			if (root.left == null && root.right == null) {
 				return root;
 			}
 
