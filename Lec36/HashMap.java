@@ -68,6 +68,18 @@ public class HashMap<K, V> {
 
 	}
 
+	@Override
+	public String toString() {
+		String s = "{";
+		for (Node nn : arr) {
+			while (nn != null) {
+				s = s + nn.key + "=" + nn.value + ", ";
+				nn = nn.next;
+			}
+		}
+		return s + "}";
+	}
+
 	public V get(K key) {
 		int idx = hashfun(key);
 		Node head = arr.get(idx);
