@@ -145,7 +145,7 @@ public class Graph {
 		Queue<Integer> q = new LinkedList<>();
 		HashSet<Integer> visited = new HashSet<>();
 		for (int src : map.keySet()) {
-			if(visited.contains(src)) {
+			if (visited.contains(src)) {
 				continue;
 			}
 			/// c++;
@@ -172,25 +172,31 @@ public class Graph {
 		System.out.println();
 
 	}
-	public void DFS() {
+
+	public void DFT() {
 		Stack<Integer> st = new Stack<>();
 		HashSet<Integer> visited = new HashSet<>();
-		st.push(src);
-		while (!st.isEmpty()) {
-			// 1. remove
-			int r = st.pop();
-			// 2. Ignore if Already visited
-			if (visited.contains(r)) {
+		for (int src : map.keySet()) {
+			if (visited.contains(src)) {
 				continue;
 			}
-			// 3. visited marked
-			visited.add(r);
-			// 4. self work
-			System.out.print(r+" ");
-			// 5. add unvisited nbrs
-			for (int nbrs : map.get(r).keySet()) {
-				if (!visited.contains(nbrs)) {
-					st.push(nbrs);
+			st.push(src);
+			while (!st.isEmpty()) {
+				// 1. remove
+				int r = st.pop();
+				// 2. Ignore if Already visited
+				if (visited.contains(r)) {
+					continue;
+				}
+				// 3. visited marked
+				visited.add(r);
+				// 4. self work
+				System.out.print(r + " ");
+				// 5. add unvisited nbrs
+				for (int nbrs : map.get(r).keySet()) {
+					if (!visited.contains(nbrs)) {
+						st.push(nbrs);
+					}
 				}
 			}
 		}
